@@ -28,10 +28,20 @@ namespace E_CommerceDapper.DataAccess.Concretes
 
             using (var connection = new SqlConnection(ConnectionString))
             {
-                var sql = @"INSERT INTO Order_Details([UnitPrice],[Quantity],[Discount])
-                            VALUES(@UnitPrice,@Quantity,@Discount)";
+                var sql = @"INSERT INTO OrderDetails([OrderId],[ProductID],[UnitPrice],[Quantity],[Discount])
+                            VALUES(@OrderID,@ProductID,@UnitPrice,@Quantity,@Discount)";
 
-                //connection.Execute(sql, new OrderDetails { UnitPrice = data.UnitPrice, Quantity = data.Quantity, Discount = data.Discount });
+             
+
+                connection.Execute(sql, new{ 
+                
+                    data.OrderID,
+                    data.ProductId,
+                    data.UnitPrice,
+                    data.Quantity,
+                    data.Discount
+                
+                });
 
             }
         }
@@ -50,7 +60,7 @@ namespace E_CommerceDapper.DataAccess.Concretes
         {
             using (var connection = new SqlConnection(ConnectionString))
             {
-                var sql = @"SELECT * FROM Order Details";
+                var sql = @"SELECT * FROM OrderDetails";
 
                 var orders = connection.Query<OrderDetails>(sql);
                 return orders;

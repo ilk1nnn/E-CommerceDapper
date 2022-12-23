@@ -15,7 +15,7 @@
             <TextBlock Margin="15,0,0,0"  FontSize="25" >Quantity</TextBlock>
             <TextBox Name="quantitytxtb" Margin="15" FontSize="25" Text="1"></TextBox>
             <TextBlock Margin="15,0,0,0"  FontSize="25" >Discount</TextBlock>
-            <TextBox Margin="15" FontSize="25"></TextBox>
+            <TextBox Text="1" Margin="15" FontSize="25"></TextBox>
             <Button Margin="15" Width="100" Height="40" FontSize="25" Command="{Binding SubmitCommand}">Submit</Button>
         </StackPanel>
     </Grid>

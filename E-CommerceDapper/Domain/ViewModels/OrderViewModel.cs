@@ -44,6 +44,9 @@ namespace E_CommerceDapper.Domain.ViewModels
 			//Order.Quantity = viewm.Product.UnitsInStock;
 			Order.UnitPrice = product.UnitPrice;
 			Order.Quantity = product.UnitsInStock;
+			Order.Discount = 0.2f;
+			Order.OrderID = 10248;
+			Order.ProductId = 5;
 
 			//Order.Quantity = product.UnitsInStock;
 			SubmitCommand = new RelayCommand((o) =>
@@ -52,7 +55,6 @@ namespace E_CommerceDapper.Domain.ViewModels
 
 				//short textboxquantity = short.Parse(Q.Text);
 
-				MessageBox.Show("Hello");
 
 				App.DB.OrderDetailsRepository.Add(Order);
 
